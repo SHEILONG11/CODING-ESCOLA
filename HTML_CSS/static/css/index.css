@@ -1,5 +1,6 @@
 body{
     background-image: url("../img/dark_background.jpeg");
+    margin: 0;
 }
 
 .navbar{

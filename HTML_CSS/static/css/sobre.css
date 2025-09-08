@@ -1,31 +1,72 @@
-/*CABEÇALHO*/
+/*CORPO*/
+*{
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+}
 
+body{
+    background-color: white;
+    margin: 0;
+}
+
+.corpo{
+    border: 2px solid red;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.header img{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 100px;
+    border: 4px solid aquamarine;
+}
+
+.container{
+    height: 100%;
+}
+
+/*CABEÇALHO*/
 .navbar{
     display: flex;
     align-items: center;
-    height: 20%;
+    height: 10%;
     background-color: black;
-    
 }
 
 .search-bar{
     display: flex;
     padding-left: 20px;
-    width: 90%;
+    width: 100%;
+    height: 100%;
 }
 
 .search-bar ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 .search-bar li{
+    height: 100%;
     display: inline;
     margin-right: 20px;
 }
 
 .search-bar li a{
+    height: 100%;
     text-decoration: none;
     font-size: 20px;
     color: darkorange;
@@ -47,67 +88,48 @@ li a:hover{
 }
 
 .logo a{
+    height: 100%;
     font-size: 40px;
     text-decoration: none;
     color: azure;
 }
 
-
-/*CORPO*/
-
-body{
-    background-color: white;
-}
-
-.corpo {
-    border: 2px solid red;
-    height: 60%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-
-.header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.header img{
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-    border-radius: 100px;
-    border: 4px solid aquamarine;
-}
-
-
 /*FOOTER*/
 .footer{
     background-color: black;
-    height: 20%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
 }
 
-.elementos ul{
+.footer ul{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    height: 200px;
-    width: 200px;
+    height: 100%;
+    width: 100px;
     place-items: center;
+    text-align: center;
 }
 
-.elementos li{
+.elementos img{
+    height: 60px;
+    width: 60px;
+    border-radius: 100px;
+}
+
+.elementos{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
+    flex-direction: column;
+    padding: 10px;
+    margin: 8px;
     background-color: bisque;
-    width: 40px;
-    height: 40px;
+    height: 100%;
 }
 
-.elementos li a{
+
+
+.footer p{
     text-decoration: none;
-    font-size: 20px;
+    font-size: 14px;
     color: darkorange;
 }

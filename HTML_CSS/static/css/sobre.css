@@ -1,31 +1,25 @@
 /*CORPO*/
-*{
-    height: 100vh;
-    box-sizing: border-box;
-    margin: 0;
-}
+
 
 body{
     background-color: white;
     margin: 0;
+    padding: 0;
+}
+
+.container{
+    height: 100vh;
+    box-sizing: border-box;
 }
 
 .corpo{
-    border: 2px solid red;
     height: 80%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    place-items: center;
 }
 
-
-.header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
-.header img{
+#imagem-central img{
     height: 200px;
     width: 200px;
     object-fit: cover;
@@ -33,26 +27,33 @@ body{
     border: 4px solid aquamarine;
 }
 
-.container{
+main{
     height: 100%;
 }
 
+#text{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+}
+
 /*CABEÇALHO*/
-.navbar{
+header{
     display: flex;
     align-items: center;
-    height: 10%;
+    height: 8%;
     background-color: black;
 }
 
 .search-bar{
-    display: flex;
     padding-left: 20px;
     width: 100%;
     height: 100%;
 }
 
 .search-bar ul{
+    align-items: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -66,9 +67,11 @@ body{
 }
 
 .search-bar li a{
+    display: inline-block;   /* ou block se quiser controlar altura/padding */
+    line-height: 2.5;           /* ajustar para o que quiser (ALTURA 2.5) */
     height: 100%;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 30px;
     color: darkorange;
 }
 
@@ -77,7 +80,7 @@ li a:hover{
     font-weight: 700;
 }
 
-.logo{
+#logo{
     background-color: aquamarine;
     width: 10%;
     height: 100%;
@@ -87,7 +90,10 @@ li a:hover{
     font-weight: 800;
 }
 
-.logo a{
+#logo a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     font-size: 40px;
     text-decoration: none;
@@ -95,41 +101,58 @@ li a:hover{
 }
 
 /*FOOTER*/
-.footer{
+footer{
     background-color: black;
-    height: 10%;
-    display: flex;
-    justify-content: center;
+    height: 12%;
+    display: GRID;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
 }
 
-.footer ul{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+footer a{
     height: 100%;
     width: 100px;
-    place-items: center;
     text-align: center;
+    display: inline-block;
+    line-height: 1;
 }
 
-.elementos img{
+footer img{
     height: 60px;
     width: 60px;
     border-radius: 100px;
+    object-fit: cover;
 }
 
-.elementos{
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    margin: 8px;
-    background-color: bisque;
-    height: 100%;
-}
-
-
-
-.footer p{
+footer p{
     text-decoration: none;
     font-size: 14px;
     color: darkorange;
+}
+
+
+
+
+/*Esse faz parte para aprender dpois*/
+.modal {
+  display: none;
+  position: fixed;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal .modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 300px;
+  margin: auto;
+}
+
+/* Quando o modal for o alvo (target) do link */
+.modal:target {
+  display: flex; /* mostra */
 }

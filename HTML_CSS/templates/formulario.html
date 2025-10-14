@@ -14,7 +14,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.6);
             padding: 15px;
             border-radius: 15px;
             width: 20%;
@@ -50,16 +50,38 @@
             pointer-events: none;
             transition: 0.5s;
         }
-        .inputUser:focus ~ .labelInput{
+        .inputUser:focus ~ .labelInput,
+        .inputUser:valid ~ .labelInput{
             top: -20px;
             font-size: 12px;
             color: dodgerblue;
+        }
+        #data_nascimento{
+            border:none;
+            padding:8px;
+            border-radius: 10px;
+            outline:none;
+            font-size: 15px;
+
+        }
+        #submit{
+            background-image: linear-gradient(to right, rgb(0, 92, 197), rgb(90, 20, 220));
+            width: 100%;
+            border: none;
+            padding: 15px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        #submit:hover{
+            background-image: linear-gradient(to right, rgb(0, 80, 172), rgb(80, 19, 195));
         }
     </style>
 </head>
 <body>
     <div class="box">
-        <form action="">
+        <form action="https://api.sheetmonkey.io/form/4ekg1Zi5gXEhZtBf3NQ2iw" method="post">
             <fieldset>
                 <legend><b>Formulário de Clientes</b></legend>
                 <br> 
@@ -77,7 +99,6 @@
                     <input type="tel" name="telefone" id="telefone" class="inputUser" required>
                     <label for="telefone" class="labelInput">Telefone</label>
                 </div>
-                <br><br>
 <!--INPUT DO TIPO RADIO-->
                 <p>Sexo:</p>
                 <input type="radio" id="feminino" name="genero" value="feminino" required>
@@ -88,10 +109,8 @@
                 <label for="outro">Outro</label>
                 <br><br>
 <!--INPUT DO TIPO DATE-->
-                <div class="inputBox">
-                    <label for="data_nascimento"><b>Data de Nascimento:</b> </label> <br>
-                    <input type="date" name="data_nascimento" id="data_nascimento" class="inputUser" required>
-                </div>
+                <label for="data_nascimento"><b>Data de Nascimento:</b> </label>
+                <input type="date" name="data_nascimento" id="data_nascimento" required>
                 <br><br>
 
                 <div class="inputBox">

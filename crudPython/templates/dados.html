@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='myform.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dados.css') }}">
     <title>Dados Salvos</title>
 </head>
 <body>
     <div class="form-container">
         <h1>Dados Salvos</h1>
         
-        <a href="/" class="back-btn">← Voltar ao Formulário</a>
+        <div id="navBar">
+            <div>
+                <a href="/" class="back-btn">← Voltar ao Formulário</a>
+            </div>
+            <div id="edit">
+                <a href="#">Edit</a>
+            </div>
+        </div>
+        <br><br>
         
         {% if dados %}
             <table class="data-table">

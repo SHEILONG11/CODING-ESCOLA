@@ -27,6 +27,7 @@
                         {% for coluna in dados[0] %}
                             <th>{{ coluna }}</th>
                         {% endfor %}
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,6 +36,7 @@
                             {% for celula in linha %}
                                 <td>{{ celula }}</td>
                             {% endfor %}
+                            <td><a href="{{ url_for('editar_registro', index='1') }}">Editar</a></td>
                         </tr>
                     {% endfor %}
                 </tbody>

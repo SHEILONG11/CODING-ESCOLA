@@ -60,3 +60,33 @@ def loadRoutes(app,init_csv,CSV_FILE):
         except Exception as e:
             flash(f'Erro ao carregar dados: {str(e)}', 'error')
             return redirect(url_for('index'))
+        
+    @app.route('/editar/<int:index>', methods=['GET', 'POST'])
+    def editar_registro(index):
+        # Ler todos os dados
+        with open(CSV_FILE, 'r', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            dados = list(reader)
+        # Cabeçalho
+        header = dados[0]
+        # Verificar se index válido
+        try:
+            linha = dados[index+1]  # +1 porque a linha 0 é o cabeçalho
+        except IndexError:
+            flash('Registro não encontrado.', 'error')
+            return redirect(url_for('visualizar_dados'))
+
+        if request.method == 'POST':
+            # Para cada coluna, pegue o valor novo do form
+            novos_valores = [ request.form.get(f'col_{j}') for j in range(len(header)) ]
+            # Substituir no dados
+            dados[index+1] = novos_valores
+            # Gravar de volta
+            with open(CSV_FILE, 'w', newline='', encoding='utf-8') as f:
+                writer = csv.writer(f)
+                writer.writerows(dados)
+            flash('Registro atualizado com sucesso!', 'success')
+            return redirect(url_for('visualizar_dados'))
+
+        # GET: renderizar um formulário com valores preenchidos
+        return render_template('editar.html', header=header, linha=linha, index=index)

@@ -8,25 +8,23 @@
   <h1>Editar Registro</h1>
 
   <form method="post" action="{{ url_for('editar_registro', index=index) }}">
-    <table>
-      <tr>
-        {% for col in header %}
-          <th>{{ col }}</th>
-        {% endfor %}
-      </tr>
-      <tr>
-        {% for j, col in enumerate(header) %}
-          <td>
-            <input type="text" name="col_{{ j }}" value="{{ linha[j] }}">
-          </td>
-        {% endfor %}
-      </tr>
-    </table>
-    <br>
-    <button type="submit">Salvar Alterações</button>
-  </form>
-
+  <table>
+    <tr>
+      {% for col in header %}
+        <th>{{ col }}</th>
+      {% endfor %}
+    </tr>
+    <tr>
+      {% for col in header %}
+        <td>
+          <input type="text" name="{{ col }}">
+        </td>
+      {% endfor %}
+    </tr>
+  </table>
   <br>
-  <a href="{{ url_for('visualizar_dados') }}">Voltar</a>
+  <button type="submit">Salvar Alterações</button>
+</form>
+
 </body>
 </html>
